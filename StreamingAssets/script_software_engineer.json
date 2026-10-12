@@ -1,0 +1,482 @@
+{
+  "version": 1,
+  "job": "software_engineer",
+  "title": "Software Engineer interview",
+  "company": "Nimbus Labs (fictional)",
+  "interviewer": {
+    "name": "Dana Whitfield",
+    "voice": "kokoro_af_heart"
+  },
+  "opening": "se_intro",
+  "closing": "se_outro",
+  "early_exit": "se_stop",
+  "nodes": [
+    {
+      "id": "se_intro",
+      "kind": "opening",
+      "say": "Hi, I'm Dana Whitfield, and I'm on the engineering hiring team at Nimbus Labs. Thanks for joining me today. This is for the software engineer role. We'll talk about your background, a couple of technical situations, and then your questions. Let's get started.",
+      "audio": "audio/se_intro.mp3",
+      "cues": "audio/se_intro.cues.json",
+      "next": {
+        "short": "se_q1",
+        "ok": "se_q1",
+        "long": "se_q1",
+        "off_topic": "se_q1"
+      }
+    },
+    {
+      "id": "se_q1",
+      "kind": "question",
+      "say": "To begin, tell me about yourself, and the kind of software work you've done.",
+      "audio": "audio/se_q1.mp3",
+      "cues": "audio/se_q1.cues.json",
+      "expect": {
+        "min_words": 15,
+        "max_words": 100,
+        "keywords_any": [
+          "experience",
+          "built",
+          "worked",
+          "studied",
+          "developed",
+          "projects",
+          "code"
+        ],
+        "star": false,
+        "max_fillers_per_100": 6
+      },
+      "next": {
+        "short": "se_q2",
+        "ok": "se_q2",
+        "long": "se_q2",
+        "off_topic": "se_q1_rephrase"
+      }
+    },
+    {
+      "id": "se_q1_rephrase",
+      "kind": "followup",
+      "say": "Let me ask that another way. What's your background, and what have you built?",
+      "audio": "audio/se_q1_rephrase.mp3",
+      "cues": "audio/se_q1_rephrase.cues.json",
+      "expect": {
+        "min_words": 10,
+        "max_words": 100,
+        "keywords_any": [
+          "experience",
+          "built",
+          "worked",
+          "studied",
+          "developed",
+          "projects",
+          "code"
+        ],
+        "star": false,
+        "max_fillers_per_100": 6
+      },
+      "next": {
+        "short": "se_q2",
+        "ok": "se_q2",
+        "long": "se_q2",
+        "off_topic": "se_q2"
+      }
+    },
+    {
+      "id": "se_q2",
+      "kind": "question",
+      "say": "Let's talk about a project. Tell me about one you've built that you're proud of, and what your part in it was.",
+      "audio": "audio/se_q2.mp3",
+      "cues": "audio/se_q2.cues.json",
+      "expect": {
+        "min_words": 20,
+        "max_words": 110,
+        "keywords_any": [
+          "built",
+          "wrote",
+          "designed",
+          "implemented",
+          "team",
+          "users",
+          "tested",
+          "deployed"
+        ],
+        "star": false,
+        "max_fillers_per_100": 6
+      },
+      "next": {
+        "short": "se_q2_probe",
+        "ok": "se_q3",
+        "long": "se_q3",
+        "off_topic": "se_q2_probe"
+      }
+    },
+    {
+      "id": "se_q2_probe",
+      "kind": "followup",
+      "say": "Could you walk me through it in more detail? What was your part, and what did you build yourself?",
+      "audio": "audio/se_q2_probe.mp3",
+      "cues": "audio/se_q2_probe.cues.json",
+      "expect": {
+        "min_words": 15,
+        "max_words": 110,
+        "keywords_any": [
+          "built",
+          "wrote",
+          "designed",
+          "implemented",
+          "tested",
+          "deployed",
+          "project",
+          "team",
+          "users"
+        ],
+        "star": true,
+        "max_fillers_per_100": 6
+      },
+      "next": {
+        "short": "se_q3",
+        "ok": "se_q3",
+        "long": "se_q3",
+        "off_topic": "se_q3"
+      }
+    },
+    {
+      "id": "se_q3",
+      "kind": "question",
+      "say": "Now, teamwork. How do you work with other engineers when you disagree about how to solve something?",
+      "audio": "audio/se_q3.mp3",
+      "cues": "audio/se_q3.cues.json",
+      "expect": {
+        "min_words": 15,
+        "max_words": 100,
+        "keywords_any": [
+          "discuss",
+          "listen",
+          "tradeoffs",
+          "review",
+          "data",
+          "compromise",
+          "prototype",
+          "agree"
+        ],
+        "star": false,
+        "max_fillers_per_100": 6
+      },
+      "next": {
+        "short": "se_q4",
+        "ok": "se_q4",
+        "long": "se_q4",
+        "off_topic": "se_q3_rephrase"
+      }
+    },
+    {
+      "id": "se_q3_rephrase",
+      "kind": "followup",
+      "say": "Let me put that differently. When a teammate wants a different approach than you do, what happens next?",
+      "audio": "audio/se_q3_rephrase.mp3",
+      "cues": "audio/se_q3_rephrase.cues.json",
+      "expect": {
+        "min_words": 10,
+        "max_words": 100,
+        "keywords_any": [
+          "discuss",
+          "listen",
+          "tradeoffs",
+          "review",
+          "data",
+          "compromise",
+          "prototype",
+          "agree"
+        ],
+        "star": false,
+        "max_fillers_per_100": 6
+      },
+      "next": {
+        "short": "se_q4",
+        "ok": "se_q4",
+        "long": "se_q4",
+        "off_topic": "se_q4"
+      }
+    },
+    {
+      "id": "se_q4",
+      "kind": "question",
+      "say": "Here's a situation. Your team ships a change on Friday afternoon. By evening, users report that the app is slow and some pages fail. You're on call. What do you do first?",
+      "audio": "audio/se_q4.mp3",
+      "cues": "audio/se_q4.cues.json",
+      "expect": {
+        "min_words": 20,
+        "max_words": 110,
+        "keywords_any": [
+          "rollback",
+          "logs",
+          "monitor",
+          "alert",
+          "incident",
+          "revert",
+          "metrics",
+          "communicate",
+          "roll back",
+          "dashboard",
+          "dashboards"
+        ],
+        "star": false,
+        "max_fillers_per_100": 6
+      },
+      "next": {
+        "short": "se_q4_probe",
+        "ok": "se_q5",
+        "long": "se_q5",
+        "off_topic": "se_q4_probe"
+      }
+    },
+    {
+      "id": "se_q4_probe",
+      "kind": "followup",
+      "say": "Take me through it. What would you do in the first thirty minutes, and who would you tell?",
+      "audio": "audio/se_q4_probe.mp3",
+      "cues": "audio/se_q4_probe.cues.json",
+      "expect": {
+        "min_words": 15,
+        "max_words": 110,
+        "keywords_any": [
+          "rollback",
+          "logs",
+          "monitor",
+          "alert",
+          "incident",
+          "revert",
+          "metrics",
+          "communicate",
+          "roll back",
+          "dashboard",
+          "dashboards"
+        ],
+        "star": false,
+        "max_fillers_per_100": 6
+      },
+      "next": {
+        "short": "se_q5",
+        "ok": "se_q5",
+        "long": "se_q5",
+        "off_topic": "se_q5"
+      }
+    },
+    {
+      "id": "se_q5",
+      "kind": "question",
+      "say": "Let's look back. Tell me about a hard bug you tracked down, and how you found the cause.",
+      "audio": "audio/se_q5.mp3",
+      "cues": "audio/se_q5.cues.json",
+      "expect": {
+        "min_words": 25,
+        "max_words": 120,
+        "keywords_any": [
+          "bug",
+          "logs",
+          "reproduce",
+          "cause",
+          "fixed",
+          "tested",
+          "debug",
+          "result"
+        ],
+        "star": true,
+        "max_fillers_per_100": 6
+      },
+      "next": {
+        "short": "se_q5_probe",
+        "ok": "se_q6",
+        "long": "se_q6",
+        "off_topic": "se_q5_probe"
+      }
+    },
+    {
+      "id": "se_q5_probe",
+      "kind": "followup",
+      "say": "Could you walk me through what happened? How did you narrow it down, and what did you change in the end?",
+      "audio": "audio/se_q5_probe.mp3",
+      "cues": "audio/se_q5_probe.cues.json",
+      "expect": {
+        "min_words": 20,
+        "max_words": 120,
+        "keywords_any": [
+          "bug",
+          "logs",
+          "reproduce",
+          "cause",
+          "fixed",
+          "tested",
+          "debug",
+          "result"
+        ],
+        "star": true,
+        "max_fillers_per_100": 6
+      },
+      "next": {
+        "short": "se_q6",
+        "ok": "se_q6",
+        "long": "se_q6",
+        "off_topic": "se_q6"
+      }
+    },
+    {
+      "id": "se_q6",
+      "kind": "question",
+      "say": "That covers what I wanted to ask. What questions do you have for me?",
+      "audio": "audio/se_q6.mp3",
+      "cues": "audio/se_q6.cues.json",
+      "expect": {
+        "min_words": 3,
+        "max_words": 80,
+        "keywords_any": [
+          "team",
+          "code",
+          "stack",
+          "review",
+          "role",
+          "what",
+          "how",
+          "next"
+        ],
+        "star": false,
+        "max_fillers_per_100": 8
+      },
+      "next": {
+        "short": "se_outro",
+        "ok": "se_q6_answer",
+        "long": "se_q6_answer",
+        "off_topic": "se_outro"
+      }
+    },
+    {
+      "id": "se_q6_answer",
+      "kind": "followup",
+      "say": "Thanks for asking. New engineers pair with a teammate on their first tasks, and every change gets a code review from someone on the team. The team will be glad to answer anything else.",
+      "audio": "audio/se_q6_answer.mp3",
+      "cues": "audio/se_q6_answer.cues.json",
+      "next": {
+        "short": "se_outro",
+        "ok": "se_outro",
+        "long": "se_outro",
+        "off_topic": "se_outro"
+      }
+    },
+    {
+      "id": "se_stop",
+      "kind": "closing",
+      "say": "That's all right. We can stop here. Thank you for your time today, and take care.",
+      "audio": "audio/se_stop.mp3",
+      "cues": "audio/se_stop.cues.json"
+    },
+    {
+      "id": "se_outro",
+      "kind": "closing",
+      "say": "Thank you for your time today. It was good to hear about your work. The team reviews all candidates, and you'll hear back within about a week. Take care.",
+      "audio": "audio/se_outro.mp3",
+      "cues": "audio/se_outro.cues.json"
+    }
+  ],
+  "fillers": [
+    "um",
+    "uh",
+    "like",
+    "you know",
+    "basically",
+    "sort of",
+    "kind of"
+  ],
+  "hedges": [
+    "maybe",
+    "i guess",
+    "i think",
+    "probably"
+  ],
+  "star_words": {
+    "situation": [
+      "one time",
+      "once",
+      "at my last",
+      "last year",
+      "last summer",
+      "at school",
+      "for example",
+      "for instance",
+      "in my previous job",
+      "at my internship"
+    ],
+    "task": [
+      "goal",
+      "needed",
+      "had to",
+      "my job was",
+      "responsible",
+      "i was asked"
+    ],
+    "action": [
+      "i built",
+      "i led",
+      "i decided",
+      "i wrote",
+      "i asked",
+      "i called",
+      "i fixed",
+      "i checked",
+      "i set up",
+      "i explained",
+      "i listened",
+      "i apologized",
+      "i offered",
+      "i escalated",
+      "i tested",
+      "i traced",
+      "i added",
+      "i told"
+    ],
+    "result": [
+      "result",
+      "improved",
+      "reduced",
+      "increased",
+      "fixed",
+      "solved",
+      "%",
+      "afterwards",
+      "in the end",
+      "ended up",
+      "turned out",
+      "so we"
+    ]
+  },
+  "coach": {
+    "per_answer": {
+      "short": "That answer was quite short. Try adding one specific example: what happened, and what you did.",
+      "long": "That answer ran long. Try to land your main point in the first two sentences, then add one example.",
+      "fillers": "A few filler words crept in, like um or you know. A short pause is fine. It sounds calm and gives you time to think.",
+      "no_star": "Try a simple shape: the situation, what you needed to do, what you did, and how it turned out.",
+      "strong": "Clear and specific. You gave a concrete example and a result, which is what interviewers listen for."
+    },
+    "score_rules": {
+      "base": 3,
+      "short": -1,
+      "long": -1,
+      "fillers": -1,
+      "star_hit": 1,
+      "keywords": 1
+    },
+    "summary": {
+      "low": "This was a first practice round, and that is a good place to start. Your answers were short or general. Next time, pick one real example per question and say what you did and how it ended. For engineering, say what you personally did and how you checked it worked.",
+      "mid": "A solid round. You answered the questions and showed some real experience. To go further, add a concrete example with a result to more of your answers, and trim filler words. For engineering, say what you personally did and how you checked it worked.",
+      "high": "A strong round. Your answers were clear, specific, and the right length, and you backed them up with examples. Keep practicing with new questions to stay sharp. For engineering, say what you personally did and how you checked it worked."
+    },
+    "strengths": {
+      "star": "You told real stories with a situation, an action, and a result. That makes your answers easy to remember.",
+      "concise": "You kept your answers a good length. That keeps the interviewer with you from start to finish.",
+      "specific": "You used concrete details like what you did and what happened. Specifics make you believable."
+    },
+    "focus": {
+      "short": "Give a little more detail. One specific example in each answer goes a long way.",
+      "fillers": "Cut down on filler words. Pause for a breath instead, and take your time.",
+      "no_star": "Practice the situation, task, action, result shape so your examples have a clear ending."
+    }
+  }
+}

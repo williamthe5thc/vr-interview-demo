@@ -1,0 +1,10 @@
+{
+  "answers": {
+    "se_q1": "I just finished a computer science degree, and I've done two internships building web features. I mostly work in Python and JavaScript. I also built a small budgeting app on my own that a few friends use.",
+    "se_q2": "My favorite project is a scheduling app for a student club. I built the backend in Python and a simple React front end. I designed the database, wrote the API, and set up tests. About sixty members use it each week.",
+    "se_q3": "I start by listening to why they prefer their approach. Then we compare tradeoffs, like speed, risk, and how easy it is to maintain. If we still disagree, I suggest a small prototype or a quick look at real data, and we go with what it shows.",
+    "se_q4": "First I'd check the dashboards and logs to confirm what's failing. If it lines up with the release, I'd roll back right away, since users are affected. I'd post an update to the team and support channel, then dig into the cause on Monday and write up what happened.",
+    "se_q5": "At my internship, a report page showed wrong totals for some users. I had to find out why. I added logging and reproduced it with one user's data, and I found a time zone conversion cutting off the last day. I fixed it, wrote a test for it, and the totals matched afterwards.",
+    "se_q6": "What does code review look like on your team, and how do new engineers get started in their first month?"
+  }
+}

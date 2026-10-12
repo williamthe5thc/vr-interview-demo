@@ -1,0 +1,470 @@
+{
+  "version": 1,
+  "job": "customer_service",
+  "title": "Customer Service interview",
+  "company": "Harbor Telecom (fictional)",
+  "interviewer": {
+    "name": "Dana Whitfield",
+    "voice": "kokoro_af_heart"
+  },
+  "opening": "cs_intro",
+  "closing": "cs_outro",
+  "early_exit": "cs_stop",
+  "nodes": [
+    {
+      "id": "cs_intro",
+      "kind": "opening",
+      "say": "Hi, I'm Dana Whitfield, and I'm on the hiring team here at Harbor Telecom. Thanks for coming in today. This is for the customer service representative role. We'll talk about your background, a couple of situations, and then your questions. Let's get started.",
+      "audio": "audio/cs_intro.mp3",
+      "cues": "audio/cs_intro.cues.json",
+      "next": {
+        "short": "cs_q1",
+        "ok": "cs_q1",
+        "long": "cs_q1",
+        "off_topic": "cs_q1"
+      }
+    },
+    {
+      "id": "cs_q1",
+      "kind": "question",
+      "say": "To begin, tell me a bit about yourself, and what draws you to customer service.",
+      "audio": "audio/cs_q1.mp3",
+      "cues": "audio/cs_q1.cues.json",
+      "expect": {
+        "min_words": 15,
+        "max_words": 100,
+        "keywords_any": [
+          "experience",
+          "worked",
+          "help",
+          "people",
+          "customer",
+          "enjoy",
+          "school"
+        ],
+        "star": false,
+        "max_fillers_per_100": 6
+      },
+      "next": {
+        "short": "cs_q2",
+        "ok": "cs_q2",
+        "long": "cs_q2",
+        "off_topic": "cs_q1_rephrase"
+      }
+    },
+    {
+      "id": "cs_q1_rephrase",
+      "kind": "followup",
+      "say": "Let me ask that a little differently. What's your background, and why customer service?",
+      "audio": "audio/cs_q1_rephrase.mp3",
+      "cues": "audio/cs_q1_rephrase.cues.json",
+      "expect": {
+        "min_words": 10,
+        "max_words": 100,
+        "keywords_any": [
+          "experience",
+          "worked",
+          "help",
+          "people",
+          "customer",
+          "enjoy",
+          "school"
+        ],
+        "star": false,
+        "max_fillers_per_100": 6
+      },
+      "next": {
+        "short": "cs_q2",
+        "ok": "cs_q2",
+        "long": "cs_q2",
+        "off_topic": "cs_q2"
+      }
+    },
+    {
+      "id": "cs_q2",
+      "kind": "question",
+      "say": "Let's talk about helping people. What experience do you have working directly with customers or the public?",
+      "audio": "audio/cs_q2.mp3",
+      "cues": "audio/cs_q2.cues.json",
+      "expect": {
+        "min_words": 15,
+        "max_words": 100,
+        "keywords_any": [
+          "customer",
+          "clients",
+          "public",
+          "store",
+          "helped",
+          "service",
+          "volunteer",
+          "worked"
+        ],
+        "star": false,
+        "max_fillers_per_100": 6
+      },
+      "next": {
+        "short": "cs_q2_probe",
+        "ok": "cs_q3",
+        "long": "cs_q3",
+        "off_topic": "cs_q2_probe"
+      }
+    },
+    {
+      "id": "cs_q2_probe",
+      "kind": "followup",
+      "say": "Could you walk me through one specific time you helped someone? What was going on, and what did you do?",
+      "audio": "audio/cs_q2_probe.mp3",
+      "cues": "audio/cs_q2_probe.cues.json",
+      "expect": {
+        "min_words": 15,
+        "max_words": 110,
+        "keywords_any": [
+          "helped",
+          "asked",
+          "solved",
+          "customer",
+          "explained",
+          "listened",
+          "fixed"
+        ],
+        "star": true,
+        "max_fillers_per_100": 6
+      },
+      "next": {
+        "short": "cs_q3",
+        "ok": "cs_q3",
+        "long": "cs_q3",
+        "off_topic": "cs_q3"
+      }
+    },
+    {
+      "id": "cs_q3",
+      "kind": "question",
+      "say": "Now, a different side of the job. Customers sometimes get upset. How do you stay calm and keep a conversation on track when someone is frustrated?",
+      "audio": "audio/cs_q3.mp3",
+      "cues": "audio/cs_q3.cues.json",
+      "expect": {
+        "min_words": 15,
+        "max_words": 100,
+        "keywords_any": [
+          "calm",
+          "listen",
+          "apologize",
+          "patient",
+          "understand",
+          "breathe",
+          "slow",
+          "empathy"
+        ],
+        "star": false,
+        "max_fillers_per_100": 6
+      },
+      "next": {
+        "short": "cs_q4",
+        "ok": "cs_q4",
+        "long": "cs_q4",
+        "off_topic": "cs_q3_rephrase"
+      }
+    },
+    {
+      "id": "cs_q3_rephrase",
+      "kind": "followup",
+      "say": "Let me put that another way. When someone is upset with you, what do you do?",
+      "audio": "audio/cs_q3_rephrase.mp3",
+      "cues": "audio/cs_q3_rephrase.cues.json",
+      "expect": {
+        "min_words": 10,
+        "max_words": 100,
+        "keywords_any": [
+          "calm",
+          "listen",
+          "apologize",
+          "patient",
+          "understand",
+          "breathe",
+          "slow"
+        ],
+        "star": false,
+        "max_fillers_per_100": 6
+      },
+      "next": {
+        "short": "cs_q4",
+        "ok": "cs_q4",
+        "long": "cs_q4",
+        "off_topic": "cs_q4"
+      }
+    },
+    {
+      "id": "cs_q4",
+      "kind": "question",
+      "say": "Here's a situation. A customer calls because their internet has been down for two days, and this is their third call. They're angry. What would you do in the first few minutes?",
+      "audio": "audio/cs_q4.mp3",
+      "cues": "audio/cs_q4.cues.json",
+      "expect": {
+        "min_words": 20,
+        "max_words": 110,
+        "keywords_any": [
+          "listen",
+          "apologize",
+          "check",
+          "escalate",
+          "technician",
+          "ticket",
+          "follow up",
+          "calm"
+        ],
+        "star": false,
+        "max_fillers_per_100": 6
+      },
+      "next": {
+        "short": "cs_q4_probe",
+        "ok": "cs_q5",
+        "long": "cs_q5",
+        "off_topic": "cs_q4_probe"
+      }
+    },
+    {
+      "id": "cs_q4_probe",
+      "kind": "followup",
+      "say": "Take me through it. What would you say to the customer first, and what would you do next?",
+      "audio": "audio/cs_q4_probe.mp3",
+      "cues": "audio/cs_q4_probe.cues.json",
+      "expect": {
+        "min_words": 15,
+        "max_words": 110,
+        "keywords_any": [
+          "listen",
+          "apologize",
+          "check",
+          "escalate",
+          "technician",
+          "ticket",
+          "follow up",
+          "calm"
+        ],
+        "star": false,
+        "max_fillers_per_100": 6
+      },
+      "next": {
+        "short": "cs_q5",
+        "ok": "cs_q5",
+        "long": "cs_q5",
+        "off_topic": "cs_q5"
+      }
+    },
+    {
+      "id": "cs_q5",
+      "kind": "question",
+      "say": "Let's look back for a moment. Tell me about a time you made a mistake at work or school, and how you handled it.",
+      "audio": "audio/cs_q5.mp3",
+      "cues": "audio/cs_q5.cues.json",
+      "expect": {
+        "min_words": 25,
+        "max_words": 120,
+        "keywords_any": [
+          "mistake",
+          "fixed",
+          "learned",
+          "told",
+          "apologized",
+          "realized",
+          "result"
+        ],
+        "star": true,
+        "max_fillers_per_100": 6
+      },
+      "next": {
+        "short": "cs_q5_probe",
+        "ok": "cs_q6",
+        "long": "cs_q6",
+        "off_topic": "cs_q5_probe"
+      }
+    },
+    {
+      "id": "cs_q5_probe",
+      "kind": "followup",
+      "say": "Could you walk me through what happened, step by step? What did you do to make it right?",
+      "audio": "audio/cs_q5_probe.mp3",
+      "cues": "audio/cs_q5_probe.cues.json",
+      "expect": {
+        "min_words": 20,
+        "max_words": 120,
+        "keywords_any": [
+          "mistake",
+          "fixed",
+          "learned",
+          "told",
+          "apologized",
+          "realized",
+          "result"
+        ],
+        "star": true,
+        "max_fillers_per_100": 6
+      },
+      "next": {
+        "short": "cs_q6",
+        "ok": "cs_q6",
+        "long": "cs_q6",
+        "off_topic": "cs_q6"
+      }
+    },
+    {
+      "id": "cs_q6",
+      "kind": "question",
+      "say": "That covers what I wanted to ask. What questions do you have for me?",
+      "audio": "audio/cs_q6.mp3",
+      "cues": "audio/cs_q6.cues.json",
+      "expect": {
+        "min_words": 3,
+        "max_words": 80,
+        "keywords_any": [
+          "team",
+          "training",
+          "schedule",
+          "role",
+          "what",
+          "how",
+          "next"
+        ],
+        "star": false,
+        "max_fillers_per_100": 8
+      },
+      "next": {
+        "short": "cs_outro",
+        "ok": "cs_q6_answer",
+        "long": "cs_q6_answer",
+        "off_topic": "cs_outro"
+      }
+    },
+    {
+      "id": "cs_q6_answer",
+      "kind": "followup",
+      "say": "Thanks for asking. New hires shadow an experienced teammate for the first two weeks, and the whole team reviews tough calls together every week. The team will be glad to answer anything else.",
+      "audio": "audio/cs_q6_answer.mp3",
+      "cues": "audio/cs_q6_answer.cues.json",
+      "next": {
+        "short": "cs_outro",
+        "ok": "cs_outro",
+        "long": "cs_outro",
+        "off_topic": "cs_outro"
+      }
+    },
+    {
+      "id": "cs_stop",
+      "kind": "closing",
+      "say": "That's all right. We can stop here. Thank you for your time today, and take care.",
+      "audio": "audio/cs_stop.mp3",
+      "cues": "audio/cs_stop.cues.json"
+    },
+    {
+      "id": "cs_outro",
+      "kind": "closing",
+      "say": "Thank you for your time today. It was good to learn about your background. The team reviews all candidates, and you'll hear back within about a week. Take care.",
+      "audio": "audio/cs_outro.mp3",
+      "cues": "audio/cs_outro.cues.json"
+    }
+  ],
+  "fillers": [
+    "um",
+    "uh",
+    "like",
+    "you know",
+    "basically",
+    "sort of",
+    "kind of"
+  ],
+  "hedges": [
+    "maybe",
+    "i guess",
+    "i think",
+    "probably"
+  ],
+  "star_words": {
+    "situation": [
+      "one time",
+      "once",
+      "at my last",
+      "last year",
+      "last summer",
+      "at school",
+      "for example",
+      "for instance",
+      "in my previous job",
+      "at my internship"
+    ],
+    "task": [
+      "goal",
+      "needed",
+      "had to",
+      "my job was",
+      "responsible",
+      "i was asked"
+    ],
+    "action": [
+      "i built",
+      "i led",
+      "i decided",
+      "i wrote",
+      "i asked",
+      "i called",
+      "i fixed",
+      "i checked",
+      "i set up",
+      "i explained",
+      "i listened",
+      "i apologized",
+      "i offered",
+      "i escalated",
+      "i tested",
+      "i traced",
+      "i added",
+      "i told"
+    ],
+    "result": [
+      "result",
+      "improved",
+      "reduced",
+      "increased",
+      "fixed",
+      "solved",
+      "%",
+      "afterwards",
+      "in the end",
+      "ended up",
+      "turned out",
+      "so we"
+    ]
+  },
+  "coach": {
+    "per_answer": {
+      "short": "That answer was quite short. Try adding one specific example: what happened, and what you did.",
+      "long": "That answer ran long. Try to land your main point in the first two sentences, then add one example.",
+      "fillers": "A few filler words crept in, like um or you know. A short pause is fine. It sounds calm and gives you time to think.",
+      "no_star": "Try a simple shape: the situation, what you needed to do, what you did, and how it turned out.",
+      "strong": "Clear and specific. You gave a concrete example and a result, which is what interviewers listen for."
+    },
+    "score_rules": {
+      "base": 3,
+      "short": -1,
+      "long": -1,
+      "fillers": -1,
+      "star_hit": 1,
+      "keywords": 1
+    },
+    "summary": {
+      "low": "This was a first practice round, and that is a good place to start. Your answers were short or general. Next time, pick one real example per question and say what you did and how it ended. For customer service, calm listening and clear next steps are what stand out.",
+      "mid": "A solid round. You answered the questions and showed some real experience. To go further, add a concrete example with a result to more of your answers, and trim filler words. For customer service, calm listening and clear next steps are what stand out.",
+      "high": "A strong round. Your answers were clear, specific, and the right length, and you backed them up with examples. Keep practicing with new questions to stay sharp. For customer service, calm listening and clear next steps are what stand out."
+    },
+    "strengths": {
+      "star": "You told real stories with a situation, an action, and a result. That makes your answers easy to remember.",
+      "concise": "You kept your answers a good length. That keeps the interviewer with you from start to finish.",
+      "specific": "You used concrete details like what you did and what happened. Specifics make you believable."
+    },
+    "focus": {
+      "short": "Give a little more detail. One specific example in each answer goes a long way.",
+      "fillers": "Cut down on filler words. Pause for a breath instead, and take your time.",
+      "no_star": "Practice the situation, task, action, result shape so your examples have a clear ending."
+    }
+  }
+}
